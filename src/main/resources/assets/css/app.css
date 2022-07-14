@@ -1,0 +1,202 @@
+.error {
+    color: red;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd
+}
+
+.fixed-panel {
+    min-height: 100px;
+    max-height: 100px;
+    overflow-y: scroll;
+}
+
+.fixed-panel-2 {
+    min-height: 250px;
+    max-height: 250px;
+    overflow-y: scroll;
+}
+
+.create-button {
+    position: relative;
+    width: 100%;
+    display: block;
+    z-index: 99;
+    padding-left: 20px;
+}
+
+.dropdown-menu-visible {
+    z-index: 100;
+}
+
+.hint {
+    display: none;
+    position: relative;
+    border: 1px solid darkred;
+}
+
+.panel-auth {
+    margin: 0 auto 20px;
+    text-align: center;
+}
+
+.panel-text {
+    padding: 20px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.panel-fonts {
+    color: #fff !important;
+    margin: 20px;
+}
+
+.panel-small-fonts {
+    display: block;
+    color: #fff !important;
+    font-size: smaller;
+    margin-top: 10px;
+}
+
+.panel-small-fonts-min {
+    display: block;
+    font-size: small;
+    color: #e0dfdf;
+}
+
+.panel-login-form {
+    background: #e2e2e214;
+    margin: 20px auto 20px;
+    width: 320px;
+    position: relative;
+    color: #fff !important;
+    padding: 20px;
+    border-radius: 10px;
+    -moz-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    -webkit-transition: all 1s ease-out;
+    cursor: pointer;
+}
+
+.panel-login-form:hover {
+    background: #00968833;
+}
+
+.panel-login-form-border {
+    border: 2px solid #fff;
+    padding: 0.4em;
+    -webkit-border-radius: 45px;
+    -moz-border-radius: 45px;
+    border-radius: 45px;
+}
+
+.panel-custom {
+    margin-bottom: 20px;
+    background-color: #ffffff1a;
+    border: 1px solid #ffffff1a;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    color: #fff;
+    height: 100%;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+#newsCarousel .carousel-caption {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: left;
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.6);
+    text-shadow: none;
+    height: 100%;
+    margin: 0px 20px 0px 0px;
+    overflow-y: scroll;
+}
+
+#newsCarousel .list-group {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#newsCarousel .list-group-item {
+    border-radius: 0px;
+    cursor: pointer;
+}
+
+#newsCarousel .list-group .active {
+    background-color: #1e509675;
+}
+
+#newsCarousel .news-back {
+    height: 350px;
+    width: 780px;
+    background: radial-gradient(#6E94B1, #3C4C5B);
+}
+
+@media (min-width: 992px) {
+    #newsCarousel {
+        padding-right: 33.3333%;
+    }
+
+    #newsCarousel .carousel-controls {
+        display: none;
+    }
+}
+
+@media (max-width: 991px) {
+    .carousel-caption p,
+    #newsCarousel .list-group {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1900px) {
+    #myCarousel .news-back {
+        height: 450px;
+        background: radial-gradient(#6E94B1, #3C4C5B);
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    #myCarousel .news-back {
+        height: 280px;
+        width: 490px;
+        background: radial-gradient(#6E94B1, #3C4C5B);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #myCarousel .news-back {
+        height: 300px;
+        width: 480px;
+        background: radial-gradient(#6E94B1, #3C4C5B);
+    }
+}
+
+.not-clickable {
+    pointer-events: none;
+}

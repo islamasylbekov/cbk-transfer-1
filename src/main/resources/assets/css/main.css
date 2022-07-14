@@ -1,0 +1,71 @@
+/*body{*/
+/*    !*background-color: #B2B1AD;*!*/
+/*    background-color: #ffffff;*/
+/*    !*background-image: url("../images/backgrounds/bg7.jpg");*!*/
+/*    background-repeat: no-repeat;*/
+/*    -moz-background-size: 100%; !* Firefox 3.6+ *!*/
+/*    -webkit-background-size: 100%; !* Safari 3.1+ и Chrome 4.0+ *!*/
+/*    -o-background-size: 100%; !* Opera 9.6+ *!*/
+/*    background-size: 100%;*/
+/*}*/
+
+/*.navbar-default{*/
+/*    background-color: #E6E6E4;*/
+/*}*/
+
+/*.operator-container{*/
+/*    width: auto;*/
+/*    float: left;*/
+/*}*/
+
+/*.admin-container{*/
+/*    width: auto;*/
+/*    float: left;*/
+/*}*/
+
+/*.navbar-inverse {*/
+/*    background-color:#1F224D;*/
+/*    border-color: #37474F;*/
+/*}*/
+
+/*.panel{*/
+/*    border-radius: 10px;*/
+/*    !*background-color: #505159;*!*/
+/*    background-color: #E6E6E4;*/
+/*    border-color:  rgba(70, 86, 93, 0.45);*/
+/*}*/
+
+/*.panel-heading{*/
+/*    border-radius: 10px;*/
+/*}*/
+
+/*.panel-default > .panel-heading {*/
+/*    background-color: #E6E6E4;*/
+/*    border-color: #6b7e79;*/
+/*}*/
+
+/*.panel-white > .panel-heading {*/
+/*    background-color:#E6E6E4;*/
+/*    border-color: #6b7e79;*/
+/*}*/
+
+/*.table-striped > tbody > tr:nth-of-type(odd) {*/
+/*     background-color: #fff;*/
+/*}*/
+
+/*.form-control {*/
+/*    background-color: #fff;*/
+/*}*/
+
+/*.select2-selection--single:not([class*=bg-]) {*/
+/*    background-color: #fff;*/
+/*    color: #333333;*/
+/*}*/
+
+/*.select2-selection--multiple:not([class*=bg-]) {*/
+/*    background-color: #fff;*/
+/*}*/
+
+/*.input-group-addon {*/
+/*    background-color: #fff;*/
+/*}*/

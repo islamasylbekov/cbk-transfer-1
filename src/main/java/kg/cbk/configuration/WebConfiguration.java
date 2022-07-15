@@ -3,7 +3,6 @@ package kg.cbk.configuration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.CacheControl;
-import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 import org.springframework.web.servlet.config.annotation.*;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 
@@ -11,7 +10,6 @@ import java.util.concurrent.TimeUnit;
 
 @EnableWebMvc
 @Configuration
-@EnableRedisHttpSession
 public class WebConfiguration implements WebMvcConfigurer {
 
     private final LocaleChangeInterceptor localeChangeInterceptor;

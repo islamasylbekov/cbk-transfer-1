@@ -1,12 +1,10 @@
 package kg.cbk.controller;
 
 import kg.cbk.entity.Employee;
-import kg.cbk.service.employee.EmployeeService;
+import kg.cbk.service.EmployeeService;
 import kg.cbk.models.employee.UpdatePasswordForm;
 import kg.cbk.util.RedirectUtil;
 import kg.cbk.validator.PasswordFormValidator;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -19,8 +17,6 @@ import javax.validation.Valid;
 @Controller
 @RequestMapping("/auth")
 public class AuthController {
-    private final static Logger LOGGER = LoggerFactory.getLogger(AuthController.class);
-
     private final EmployeeService employeeService;
     private final PasswordFormValidator passwordFormValidator;
 

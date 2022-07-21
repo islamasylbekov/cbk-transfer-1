@@ -8,7 +8,7 @@ import kg.cbk.entity.Transfer;
 import kg.cbk.repository.TransferRepository;
 import kg.cbk.service.BankService;
 import kg.cbk.service.TransferService;
-import kg.cbk.service.reference.CommonReferenceService;
+import kg.cbk.service.CommonReferenceService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;

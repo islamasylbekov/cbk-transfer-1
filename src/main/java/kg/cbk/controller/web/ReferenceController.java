@@ -61,15 +61,6 @@ public class ReferenceController {
         return referenceEndpoint.roles(pagedAssembler, predicate, pageable);
     }
 
-    @GetMapping("/common-reference-type")
-    public PagedResources<SelectOptionResource> commonReferenceType(
-            PagedResourcesAssembler<CommonReferenceType> pagedAssembler,
-            @QuerydslPredicate(root = CommonReferenceType.class) Predicate predicate,
-            @PageableDefault Pageable pageable
-    ) {
-        return referenceEndpoint.commonReferenceType(pagedAssembler, predicate, pageable);
-    }
-
     @GetMapping("/common-reference")
     public PagedResources<SelectOptionResource> commonReference(
             PagedResourcesAssembler<CommonReference> pagedAssembler,
@@ -77,15 +68,6 @@ public class ReferenceController {
             @PageableDefault Pageable pageable
     ) {
         return referenceEndpoint.commonReference(pagedAssembler, predicate, pageable);
-    }
-
-    @GetMapping("/common-reference-parent")
-    public PagedResources<SelectOptionResource> commonReferenceParent(
-            PagedResourcesAssembler<CommonReference> pagedAssembler,
-            @QuerydslPredicate(root = CommonReference.class) Predicate predicate,
-            @PageableDefault Pageable pageable
-    ) {
-        return referenceEndpoint.commonReferenceParent(pagedAssembler, predicate, pageable);
     }
 
     @GetMapping("/bank")

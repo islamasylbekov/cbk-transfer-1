@@ -7,7 +7,7 @@ import kg.cbk.mapper.TransferMapper;
 import kg.cbk.models.CodeConfirmDto;
 import kg.cbk.models.TransferDto;
 import kg.cbk.service.TransferService;
-import kg.cbk.service.reference.CommonReferenceService;
+import kg.cbk.service.CommonReferenceService;
 import kg.cbk.table.TransferTable;
 import kg.cbk.util.RedirectUtil;
 import org.springframework.stereotype.Component;

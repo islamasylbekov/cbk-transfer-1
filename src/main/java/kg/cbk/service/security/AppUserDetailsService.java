@@ -2,7 +2,7 @@ package kg.cbk.service.security;
 
 import kg.cbk.entity.Employee;
 import kg.cbk.entity.security.SecurityRole;
-import kg.cbk.service.employee.EmployeeService;
+import kg.cbk.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

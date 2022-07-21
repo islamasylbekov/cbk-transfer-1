@@ -23,13 +23,4 @@ public abstract class TimedEntity extends BaseEntity {
 
     @LastModifiedDate
     private LocalDateTime updatedAt;
-
-    public String getCreatedAtFormatted() {
-        return createdAt.format(TimeHelper.DATE_TIME_FORMATTER);
-    }
-
-    public String getUpdatedAtFormatted() {
-        return Objects.nonNull(updatedAt) ? updatedAt.format(TimeHelper.DATE_TIME_FORMATTER) : "";
-    }
-
 }

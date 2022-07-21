@@ -1,4 +1,4 @@
-package kg.cbk.service.employee;
+package kg.cbk.service.impl;
 
 import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.types.Predicate;
@@ -7,6 +7,7 @@ import kg.cbk.entity.Employee;
 import kg.cbk.models.employee.ChangePasswordForm;
 import kg.cbk.models.employee.UpdatePasswordForm;
 import kg.cbk.repository.EmployeeRepository;
+import kg.cbk.service.EmployeeService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -17,12 +18,12 @@ import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @Service
-public class EmployeeService {
+public class EmployeeServiceImpl implements EmployeeService {
 
-    private final PasswordEncoder passwordEncoder;
-    private final EmployeeRepository employeeRepository;
+    final PasswordEncoder passwordEncoder;
+    final EmployeeRepository employeeRepository;
 
-    public EmployeeService(
+    public EmployeeServiceImpl(
             PasswordEncoder passwordEncoder,
             EmployeeRepository employeeRepository
     ) {
@@ -31,6 +32,7 @@ public class EmployeeService {
     }
 
     @Transactional(readOnly = true)
+    @Override
     public Page<Employee> findAll(
             Predicate predicate,
             Pageable pageable,
@@ -41,6 +43,7 @@ public class EmployeeService {
     }
 
     @Transactional
+    @Override
     public void updatePasswordAndExtendExpirationTime(
             @NotNull UpdatePasswordForm form,
             @NotNull Employee employee
@@ -51,6 +54,7 @@ public class EmployeeService {
     }
 
     @Transactional
+    @Override
     public void changePassword(
             @NotNull ChangePasswordForm form,
             @NotNull Employee employee
@@ -61,11 +65,13 @@ public class EmployeeService {
     }
 
     @Transactional(readOnly = true)
+    @Override
     public Employee findByLogin(String login) {
         return employeeRepository.findByLogin(login);
     }
 
     @Transactional
+    @Override
     public Employee save(Employee employee){
         return employeeRepository.save(employee);
     }

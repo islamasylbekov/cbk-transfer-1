@@ -101,9 +101,6 @@
                         + ((String($(this).attr("name")).indexOf('email') === -1)
                                 ? ""
                                 : " <@spring.message 'validation.form.input-valid-email' />")
-                        + ((String($(this).attr("name")).indexOf('applicantInn') === -1)
-                                ? ""
-                                : " <@spring.message 'validation.form.required-field-pin' />")
             });
 
             $(this).find("textarea").each(function () {
@@ -190,38 +187,6 @@
         }
     }(jQuery))
 </script>
-<script>
-    maxFileSizeInBytes = #{maxFileSizeInBytes};
-    $(function() {
-        $('input[type=file]').change(function() {
-            console.log('change event')
-            if ($(this).val().indexOf("..") > 0) {
-                swal({
-                    title: "<@spring.message "error.title"/>",
-                    text: "<@spring.message "error.fileNameContainsDoubleDot"/>",
-                    type: "error"
-                });
-                $(this).val(null).trigger('change');
-            } else {
-                let sizeOfFiles = 0;
-                let inputFiles = $("form input[type=file]");
-                for (let key in inputFiles){
-                    if (inputFiles[key] && inputFiles[key].files && inputFiles[key].files[0]){
-                        sizeOfFiles += inputFiles[key].files[0].size;
-                    }
-                }
-                if (maxFileSizeInBytes && sizeOfFiles > maxFileSizeInBytes) {
-                    $(this).val(null).trigger('change');
-                    swal({
-                        title: "<@spring.message "error.title"/>",
-                        text: "<@spring.message "error.fileMaxSizeExceed"/>",
-                        type: "error"
-                    });
-                }
-            }
-        });
-    });
-</script>
 <#--Form validate override-->
 
 <#setting datetime_format = "iso">
@@ -292,62 +257,6 @@
              </ul>
          </div>
     </div>
-
-    <div class="operator-container">
-             <ul class="nav navbar-nav navbar-left">
-                 <#if user.hasRole("ROLE_OPERATOR" )>
-                         <li class="dropdown">
-                            <a  class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="icon-credit-card position-left"></i>
-                                    Регистрация для КР
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-right">
-                                 <li>
-                                    <a href="/victims">
-                                 <i class="icon-profile position-left"></i>
-                                  <#--<@spring.message "Жертвы"/>-->
-                                    Регистрация жертв КР
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="/identification-of-victims">
-                                        <i class="icon-user-check position-left"></i>
-                                     Таблица идентификации КР
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a  class="dropdown-toggle" data-toggle="dropdown">
-                                 <i class="icon-earth position-left"></i>
-                                    Регистрация для иностранцев
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-right">
-                                 <li>
-                                    <a href="/foreigner-victims">
-                                        <i class="icon-profile position-left"></i>
-                                    Регистрация иностранных жертв
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="/ident-of-foreigner">
-                                        <i class="icon-user-check position-left"></i>
-                                    Таблица идентификация иностранцев
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="/common-reference">
-                                <i class="icon-list2 position-left"></i>
-                                Справочники
-                            </a>
-                        </li>
-                </#if>
-            </ul>
-         </div>
 </div>
 </#macro>
 

@@ -2,15 +2,11 @@ package kg.cbk.entity;
 
 import com.querydsl.core.annotations.PropertyType;
 import com.querydsl.core.annotations.QueryType;
-import kg.cbk.entity.base.TimedEntity;
-import kg.cbk.entity.reference.CommonReference;
-import kg.cbk.entity.security.SecurityRole;
 import kg.cbk.component.Selectable;
+import kg.cbk.entity.base.TimedEntity;
+import kg.cbk.entity.security.SecurityRole;
 import kg.cbk.util.TimeHelper;
 import lombok.*;
-import lombok.experimental.SuperBuilder;
-import org.hibernate.envers.Audited;
-import org.hibernate.envers.NotAudited;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -24,10 +20,7 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
-import static org.hibernate.envers.RelationTargetAuditMode.NOT_AUDITED;
 
-
-@Audited
 @Entity
 @Getter
 @Setter
@@ -62,7 +55,6 @@ public class Employee extends TimedEntity implements UserDetails, Selectable {
     private LocalDateTime passwordExpirationTime;
 
     @ManyToOne
-    @Audited(targetAuditMode = NOT_AUDITED)
     @JoinColumn(name = "bank_id")
     private Bank bank;
 
@@ -70,12 +62,10 @@ public class Employee extends TimedEntity implements UserDetails, Selectable {
     private String rank;
 
     @NotNull
-    @Audited(targetAuditMode = NOT_AUDITED)
     @ManyToOne
     @JoinColumn(name = "role_id", nullable = false)
     private SecurityRole role;
 
-    @NotAudited
     @ManyToMany
     @JoinTable(name = "m2m_employee_security_role",
             joinColumns = {@JoinColumn(name = "employee_id")},

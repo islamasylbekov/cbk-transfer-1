@@ -1,6 +1,6 @@
 package kg.cbk.validator;
 
-import kg.cbk.service.employee.EmployeeService;
+import kg.cbk.service.EmployeeService;
 import kg.cbk.models.employee.EmployeeDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

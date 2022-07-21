@@ -1,7 +1,7 @@
 package kg.cbk.validator;
 
 import kg.cbk.entity.Employee;
-import kg.cbk.service.employee.EmployeeService;
+import kg.cbk.service.EmployeeService;
 import kg.cbk.models.employee.ChangePasswordForm;
 import kg.cbk.models.employee.UpdatePasswordForm;
 import org.springframework.beans.factory.annotation.Autowired;

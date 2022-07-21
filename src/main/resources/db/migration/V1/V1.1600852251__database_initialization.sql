@@ -40,19 +40,6 @@ CREATE TABLE IF NOT EXISTS employee
     role_id                  BIGINT REFERENCES security_role (id) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS revision
-(
-    id          BIGSERIAL PRIMARY KEY,
-    "timestamp" BIGINT,
-    auditor_id  BIGINT REFERENCES employee (id)
-);
-
-CREATE TABLE IF NOT EXISTS employee_aud AS TABLE employee;
-ALTER TABLE employee_aud
-    ADD COLUMN IF NOT EXISTS revtype SMALLINT;
-ALTER TABLE employee_aud
-    ADD COLUMN IF NOT EXISTS rev BIGINT REFERENCES revision (id);
-
 CREATE TABLE IF NOT EXISTS m2m_employee_security_role
 (
     employee_id      BIGINT REFERENCES employee (id)      NOT NULL,
@@ -70,8 +57,6 @@ CREATE TABLE IF NOT EXISTS bank
 );
 
 ALTER TABLE employee
-    ADD COLUMN bank_id BIGINT REFERENCES bank (id);
-ALTER TABLE employee_aud
     ADD COLUMN bank_id BIGINT REFERENCES bank (id);
 
 CREATE TABLE IF NOT EXISTS transfer

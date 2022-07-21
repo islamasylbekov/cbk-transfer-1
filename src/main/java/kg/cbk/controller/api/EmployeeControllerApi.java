@@ -2,12 +2,11 @@ package kg.cbk.controller.api;
 
 import com.querydsl.core.types.Predicate;
 import kg.cbk.entity.Employee;
-import kg.cbk.service.employee.EmployeeService;
+import kg.cbk.service.EmployeeService;
 import kg.cbk.assembler.datatable.EmployeeResourceAssembler;
 import kg.cbk.resource.datatable.EmployeeResource;
 import kg.cbk.resource.datatable.base.TableResource;
 import kg.cbk.table.core.TableRequestData;
-import org.springframework.data.domain.Page;
 import org.springframework.data.querydsl.binding.QuerydslPredicate;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.PostMapping;

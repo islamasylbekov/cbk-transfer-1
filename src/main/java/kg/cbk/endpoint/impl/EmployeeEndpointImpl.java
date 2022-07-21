@@ -5,7 +5,7 @@ import kg.cbk.entity.Employee;
 import kg.cbk.mapper.EmployeeMapper;
 import kg.cbk.models.employee.ChangePasswordForm;
 import kg.cbk.models.employee.EmployeeDto;
-import kg.cbk.service.employee.EmployeeService;
+import kg.cbk.service.EmployeeService;
 import kg.cbk.table.employee.EmployeeTable;
 import kg.cbk.util.RedirectUtil;
 import kg.cbk.validator.EmployeeFormValidator;

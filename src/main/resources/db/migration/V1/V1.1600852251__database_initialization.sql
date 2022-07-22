@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS bank
     id                       BIGSERIAL PRIMARY KEY,
     created_at               TIMESTAMP WITHOUT TIME ZONE DEFAULT now() NOT NULL,
     updated_at               TIMESTAMP WITHOUT TIME ZONE,
-    name                     VARCHAR(255) NOT NULL UNIQUE,
+    name                     VARCHAR(255) NOT NULL,
     address                  VARCHAR(255) NOT NULL,
     money_count              BIGINT NOT NULL
 );

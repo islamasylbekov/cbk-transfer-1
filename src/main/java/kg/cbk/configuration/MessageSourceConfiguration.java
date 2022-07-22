@@ -21,20 +21,4 @@ public class MessageSourceConfiguration {
         messageSource.setDefaultEncoding("UTF-8");
         return messageSource;
     }
-
-    @Bean
-    public LocaleResolver localeResolver() {
-        CookieLocaleResolver resolver = new CookieLocaleResolver();
-        resolver.setCookieName("lang");
-        resolver.setDefaultLocale(new Locale("ru"));
-        return resolver;
-    }
-
-    @Bean
-    public LocaleChangeInterceptor localeChangeInterceptor() {
-        LocaleChangeInterceptor interceptor = new LocaleChangeInterceptor();
-        interceptor.setParamName("lang");
-        return interceptor;
-    }
-
 }

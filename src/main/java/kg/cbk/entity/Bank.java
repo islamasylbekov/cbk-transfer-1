@@ -3,6 +3,7 @@ package kg.cbk.entity;
 import kg.cbk.component.Selectable;
 import kg.cbk.entity.base.TimedEntity;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -17,6 +18,7 @@ import javax.validation.constraints.NotNull;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Bank extends TimedEntity implements Selectable {
 
     @NotBlank
@@ -29,9 +31,6 @@ public class Bank extends TimedEntity implements Selectable {
     @Column(name = "money_count")
     private Long moneyCount;
 
-    public static BankBuilder builder() {
-        return new BankBuilder();
-    }
 
     @Override
     public String getSelectorId() {
@@ -43,35 +42,4 @@ public class Bank extends TimedEntity implements Selectable {
         return this.getName();
     }
 
-    public static class BankBuilder {
-        private @NotBlank String name;
-        private @NotBlank String address;
-        private @NotNull Long moneyCount;
-
-        BankBuilder() {
-        }
-
-        public BankBuilder name(@NotBlank String name) {
-            this.name = name;
-            return this;
-        }
-
-        public BankBuilder address(@NotBlank String address) {
-            this.address = address;
-            return this;
-        }
-
-        public BankBuilder moneyCount(@NotNull Long moneyCount) {
-            this.moneyCount = moneyCount;
-            return this;
-        }
-
-        public Bank build() {
-            return new Bank(name, address, moneyCount);
-        }
-
-        public String toString() {
-            return "Bank.BankBuilder(name=" + this.name + ", address=" + this.address + ", moneyCount=" + this.moneyCount + ")";
-        }
-    }
 }

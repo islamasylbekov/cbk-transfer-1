@@ -16,14 +16,9 @@ import java.util.Objects;
 import java.util.Optional;
 
 @Configuration
-@EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
 @EnableJpaAuditing(auditorAwareRef = "auditorProvider")
+@EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
 public class ApplicationConfiguration {
-
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder(8);
-    }
 
     @Bean
     public AuditorAware<Employee> auditorProvider() {
@@ -38,4 +33,5 @@ public class ApplicationConfiguration {
             return Optional.empty();
         };
     }
+
 }

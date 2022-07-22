@@ -12,15 +12,6 @@ import java.util.concurrent.TimeUnit;
 @Configuration
 public class WebConfiguration implements WebMvcConfigurer {
 
-    private final LocaleChangeInterceptor localeChangeInterceptor;
-
-    @Autowired
-    public WebConfiguration(
-            LocaleChangeInterceptor localeChangeInterceptor
-    ) {
-        this.localeChangeInterceptor = localeChangeInterceptor;
-    }
-
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry
@@ -35,10 +26,6 @@ public class WebConfiguration implements WebMvcConfigurer {
                 .resourceChain(true);
     }
 
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(localeChangeInterceptor);
-    }
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
